@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+header {
+    padding: 1rem;
+
+    >ul {
+        margin-left: auto;
+        flex-wrap: nowrap;
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
+        width: 40%;
+
+        >li {
+            list-style: none;
+            font-weight: 700;
+
+            &.active,
+            &:hover {
+                cursor: pointer;
+                color: #d5925e;
+            }
+        }
+    }
+}
+
+.home {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 2% 5% 2%;
+    margin: auto 0;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+
+    .site-content {
+        width: 50%;
+
+        .profile-container {
+
+            p {
+                width: 80%;
+                margin-bottom: 3.4rem;
+            }
+
+            >p:first-of-type {
+                color: #45a6be;
+                font-size: 1.3rem;
+            }
+
+            p.profile-introduction {
+                font-weight: 900;
+                font-size: 3rem;
+                color: #008db0;
+
+                >span {
+                    color: #d5925e;
+                }
+            }
+
+            >p:last-of-type {
+                white-space: wrap;
+                margin-bottom: 3rem;
+
+                >.see-more {
+                    color: #45a6be;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .cta-buttons {
+
+            >button {
+                border: none;
+                outline: none;
+                cursor: pointer;
+                padding: .5rem 1.3rem;
+                font-size: 1.1rem;
+                border-radius: .31rem;
+                margin-bottom: 1rem;
+
+                &:first-of-type {
+                    box-shadow: #c4e4eb 0px .3rem .2rem;
+                    background-color: #028aa9;
+                    color: white;
+                    margin-right: 2rem;
+                }
+
+                &:last-of-type {
+                    box-shadow: #c4e4eb 0px .1rem .2rem;
+                    background-color: white;
+                    border: 1px solid #028aa9;
+                    color: #028aa9;
+                }
+            }
+        }
+    }
+
+    .persona-image {
+        position: relative;
+        width: 40%;
+
+        >div:first-of-type {
+            width: 23rem;
+            height: 23rem;
+            overflow-y: hidden;
+            border-bottom-left-radius: 50%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 2;
+
+            img {
+                width: 100%;
+                object-fit: cover;
+            }
+
+        }
+
+        >.background {
+            width: 23rem;
+            height: 21rem;
+            background-color: #81d4e8;
+            border-bottom-left-radius: 50%;
+            position: absolute;
+            z-index: 1;
+            right: 1rem;
+            top: 2rem;
+        }
+    }
+
+    @media screen and (max-width: 900px) {
+        .persona-image {
+
+            >div:first-of-type {
+                width: 20rem;
+                height: 23rem;
+            }
+
+            >.background {
+                width: 20rem;
+                height: 21rem;
+            }
+
+        }
+
+        @media screen and (max-width: 816px) {
+
+            .profile-introduction {
+                font-size: 2rem !important;
+
+            }
+
+            .persona-image {
+
+                >div:first-of-type {
+                    width: 18rem;
+                    height: 21rem;
+                }
+
+                >.background {
+                    width: 18rem;
+                    height: 19rem;
+                }
+
+            }
+
+        }
+
+    }
+}
+
+@media screen and (max-width: 690px) {
+    header {
+        ul {
+            width: 60%;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        ul {
+            width: 100%;
+        }
+    }
+
+    .home {
+
+        .site-content {
+            width: 100%;
+        }
+        .persona-image{
+            display: none;
+        }
+        .profile-introduction {
+            font-size: .6rem;
+        }
+    }
+}
